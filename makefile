@@ -11,6 +11,9 @@ refetch:
 	yarn install
 	yarn upgrade ${PROJECT_NAME}
 
+# Inject reference to cordova's generated script
+inject.ref:
+	echo "<script src=cordova.js></script>" >> ${PROJECT_DIR}public/index.html
 
 ## Cordova config file
 cordova.config:
@@ -48,5 +51,5 @@ build.android:
 	cordova build android
 
 
-deploy: refetch configure build populate run
-app: refetch configure build populate build.android
+deploy: refetch inject.ref configure build populate run
+app: refetch inject.ref configure build populate build.android
