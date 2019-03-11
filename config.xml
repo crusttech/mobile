@@ -2,10 +2,10 @@
 <widget id="com.crusttech.hybrid" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>crust-mobile</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Crusttech hybrid mobile application.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="tomaz.jerman@kendu.si" href="https://github.com/crusttech">
+        Crusttech team
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
