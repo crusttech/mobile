@@ -23,5 +23,8 @@
         "platforms": [
             "android"
         ]
+    },
+    "devDependencies": {
+        "webpack-merge": "^4.2.1"
     }
 }

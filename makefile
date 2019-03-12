@@ -1,10 +1,12 @@
 PROJECT_NAME = crust-project
 PROJECT_DIR = ./node_modules/${PROJECT_NAME}/
-CORDOVA_APP_ROOT = www/
-PROJECT_BUILD_PATH = ../../${CORDOVA_APP_ROOT} # Directory inside cordova root
-CORDOVA_CFG_FILE = config.cordova.js
-PROJECT_CFG_FILE = config.js
-CORDOVA_ENV_DIR = ./env/
+CORDOVA_ROOT = www/
+PROJECT_BUILD_PATH = ../../${CORDOVA_ROOT}
+PROJECT_CORDOVA_CRUST_CFG_FILE = config.cordova.js
+PROJECT_CRUST_CFG_FILE = config.js
+CORDOVA_CONFIG_ROOT = ./config/
+VUE_CONFIG_BASE = base.config.js
+VUE_CONFIG = vue.config.js
 
 # Refetches crust project; has to be specified inside package.json
 refetch:
@@ -17,14 +19,18 @@ inject.ref:
 
 ## Cordova config file
 cordova.config:
-	cp ${PROJECT_DIR}public/${CORDOVA_CFG_FILE} ${PROJECT_DIR}public/${PROJECT_CFG_FILE}
+	cp ${PROJECT_DIR}public/${PROJECT_CORDOVA_CRUST_CFG_FILE} ${PROJECT_DIR}public/${PROJECT_CRUST_CFG_FILE}
 
 ## Env config file
 env.config:
-	cp -r ${CORDOVA_ENV_DIR}. ${PROJECT_DIR}
+	cp -r ${CORDOVA_CONFIG_ROOT}env/. ${PROJECT_DIR}
+
+vue.config:
+	mv ${PROJECT_DIR}${VUE_CONFIG} ${PROJECT_DIR}${VUE_CONFIG_BASE}
+	cp ${CORDOVA_CONFIG_ROOT}${VUE_CONFIG} ${PROJECT_DIR}${VUE_CONFIG}
 
 # Updates configs
-configure: cordova.config env.config
+configure: cordova.config env.config vue.config
 
 
 ## Update project's dependencies
@@ -40,7 +46,7 @@ build: project.dependencies project.build
 
 # Populates cordova's source with aditional configs
 populate:
-	cp ${PROJECT_DIR}public/config.js ./${CORDOVA_APP_ROOT}
+	cp ${PROJECT_DIR}public/config.js ./${CORDOVA_ROOT}
 
 # Runs app
 run:
