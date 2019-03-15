@@ -59,3 +59,6 @@ build.android:
 
 deploy: refetch inject.ref configure build populate run
 app: refetch inject.ref configure build populate build.android
+platforms:
+	cordova platform add android
+	# cordova platform add ios
