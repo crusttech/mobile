@@ -7,6 +7,7 @@ PROJECT_CRUST_CFG_FILE = config.js
 CORDOVA_CONFIG_ROOT = ./config/
 VUE_CONFIG_BASE = base.config.js
 VUE_CONFIG = vue.config.js
+ANDROID_RESOURCE_ROOT = ./platforms/android/app/src/main/res/
 
 # Refetches crust project; has to be specified inside package.json
 refetch:
@@ -44,9 +45,11 @@ project.build:
 # Builds project
 build: project.dependencies project.build
 
-# Populates cordova's source with aditional configs
+# Populates cordova's source with aditional configs & resources
 populate:
 	cp ${PROJECT_DIR}public/config.js ./${CORDOVA_ROOT}
+	cp -r ./res/icon/android/. ${ANDROID_RESOURCE_ROOT}
+	## TODO: Ios
 
 # Runs app
 run:
