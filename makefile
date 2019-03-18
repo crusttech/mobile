@@ -49,6 +49,7 @@ build: project.dependencies project.build
 populate:
 	cp ${PROJECT_DIR}public/config.js ./${CORDOVA_ROOT}
 	cp -r ./res/icon/android/. ${ANDROID_RESOURCE_ROOT}
+	cp -r ./res/screen/android/. ${ANDROID_RESOURCE_ROOT}
 	## TODO: Ios
 
 # Runs app
