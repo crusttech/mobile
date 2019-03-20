@@ -14,5 +14,23 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/apache/cordova-plugin-splashscreen.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-window-background": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-window-background"
+    },
+    "is_top_level": true,
+    "variables": {
+      "WINDOW_BACKGROUND_COLOR": "#efefef"
+    }
   }
 }

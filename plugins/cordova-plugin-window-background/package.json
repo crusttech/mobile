@@ -1,0 +1,58 @@
+{
+  "_from": "cordova-plugin-window-background",
+  "_id": "cordova-plugin-window-background@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-Tj5D1JvV2Ek5k9lOAiGpSwWBD124vnogdPmA4breG7JwEuy4DVPfiz3ZqzSI60ihE+Onkss7b92oWcA8HDjTjg==",
+  "_location": "/cordova-plugin-window-background",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-window-background",
+    "name": "cordova-plugin-window-background",
+    "escapedName": "cordova-plugin-window-background",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-window-background/-/cordova-plugin-window-background-1.1.1.tgz",
+  "_shasum": "a8e9174006e9ff83c3d6518ac265f3557940a6d3",
+  "_spec": "cordova-plugin-window-background",
+  "_where": "/home/fajfa/Desktop/KENDU/Crust/mobile-messaging.hybrid",
+  "author": {
+    "name": "Douglas Zaltron",
+    "email": "douglaszaltron@gmail.com",
+    "url": "https://github.com/douglaszaltron"
+  },
+  "bugs": {
+    "url": "https://github.com/douglaszaltron/cordova-plugin-window-background/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "xml2js": "~0.4.19"
+  },
+  "deprecated": false,
+  "description": "Plugin to set Android window background for Cordova/Ionic applications",
+  "homepage": "https://github.com/douglaszaltron/cordova-plugin-window-background",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "android",
+    "ionic",
+    "background",
+    "window",
+    "background"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-window-background",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/douglaszaltron/cordova-plugin-window-background.git"
+  },
+  "version": "1.1.1"
+}

@@ -18,11 +18,42 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <splash density="land-hdpi" src="res/screen/android/drawable-land-hdpi/splash.png" />
+        <splash density="land-ldpi" src="res/screen/android/drawable-land-ldpi/splash.png" />
+        <splash density="land-mdpi" src="res/screen/android/drawable-land-mdpi/splash.png" />
+        <splash density="land-xhdpi" src="res/screen/android/drawable-land-xhdpi/splash.png" />
+        <splash density="land-xxhdpi" src="res/screen/android/drawable-land-xxhdpi/splash.png" />
+        <splash density="land-xxxhdpi" src="res/screen/android/drawable-land-xxxhdpi/splash.png" />
+        <splash density="port-hdpi" src="res/screen/android/drawable-port-hdpi/splash.png" />
+        <splash density="port-ldpi" src="res/screen/android/drawable-port-ldpi/splash.png" />
+        <splash density="port-mdpi" src="res/screen/android/drawable-port-mdpi/splash.png" />
+        <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi/splash.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi/splash.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi/splash.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <splash height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" />
+        <splash height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
+        <splash height="320" src="res/screen/ios/screen-iphone-landscape.png" width="480" />
+        <splash height="640" src="res/screen/ios/screen-iphone-landscape-2x.png" width="960" />
+        <splash height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
+        <splash height="2048" src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536" />
+        <splash height="768" src="res/screen/ios/screen-ipad-ladscape.png" width="1024" />
+        <splash height="1536" src="res/screen/ios/screen-ipad-landscape-2x.png" width="2048" />
+        <splash height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     </platform>
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="https://github.com/apache/cordova-plugin-splashscreen.git" />
+    <plugin name="cordova-plugin-window-background" spec="1.1.1">
+        <variable name="WINDOW_BACKGROUND_COLOR" value="#efefef" />
+    </plugin>
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="2550" />
+    <preference name="FadeSplashScreenDuration" value="750" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
     <engine name="android" spec="^7.1.4" />
 </widget>
