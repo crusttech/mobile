@@ -9,6 +9,9 @@ VUE_CONFIG_BASE = base.config.js
 VUE_CONFIG = vue.config.js
 ANDROID_RESOURCE_ROOT = ./platforms/android/app/src/main/res/
 
+clean:
+	cordova clean
+
 # Refetches crust project; has to be specified inside package.json
 refetch:
 	yarn install
@@ -62,7 +65,7 @@ build.android:
 
 
 deploy: refetch inject.ref configure build populate run
-app: refetch inject.ref configure build populate build.android
+app: clean refetch inject.ref configure build populate build.android
 platforms:
 	cordova platform add android
 	# cordova platform add ios
