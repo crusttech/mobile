@@ -15,7 +15,7 @@
         "cordova-plugin-splashscreen": "git+https://github.com/apache/cordova-plugin-splashscreen.git",
         "cordova-plugin-whitelist": "^1.3.3",
         "cordova-plugin-window-background": "1.1.1",
-        "crust-project": "file:../webapp-messaging"
+        "crust-project": "git+https://github.com/crusttech/webapp-messaging.git"
     },
     "cordova": {
         "plugins": {
