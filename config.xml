@@ -55,5 +55,4 @@
     <preference name="SplashScreenDelay" value="2550" />
     <preference name="FadeSplashScreenDuration" value="750" />
     <preference name="SplashMaintainAspectRatio" value="false" />
-    <engine name="android" spec="^7.1.4" />
 </widget>
