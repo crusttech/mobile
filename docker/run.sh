@@ -90,26 +90,23 @@ printf "\n\n...Deps upgraded...\n\n";
 
 printf "\n\n...Configuring...\n\n";
 ## Inject custom scripts
-# cp scripts/index.js "${PROJECT_DIR}public/scripts.js";
+cp scripts/index.js "${PROJECT_DIR}public/scripts.js";
 
 echo "<script src=cordova.js></script>" >> "${PROJECT_DIR}public/index.html";
-# echo "<script src=scripts.js></script>" >> "${PROJECT_DIR}public/index.html";
+echo "<script src=scripts.js></script>" >> "${PROJECT_DIR}public/index.html";
 
-## Clear out crust config file, since mobile client configures it self.
-# echo "" > "${PROJECT_DIR}public/${PROJECT_CRUST_CFG_FILE}";
+## env configs
+cp -r "${CORDOVA_CONFIG_ROOT}env/." "${PROJECT_DIR}";
 
 ## Vue configs
 mv "${PROJECT_DIR}${VUE_CONFIG}" "${PROJECT_DIR}${VUE_CONFIG_BASE}";
 cp "${CORDOVA_CONFIG_ROOT}${VUE_CONFIG}" "${PROJECT_DIR}${VUE_CONFIG}";
 
-## env configs
-cp -r "${CORDOVA_CONFIG_ROOT}env/." "${PROJECT_DIR}";
-
 ## Main
-# mv ${PROJECT_DIR}src/${VUE_MAIN} ${PROJECT_DIR}src/${VUE_MAIN_BASE};
-# cp ${CORDOVA_CONFIG_ROOT}${VUE_MAIN} ${PROJECT_DIR}src/${VUE_MAIN};
+mv "${PROJECT_DIR}src/${VUE_MAIN}" "${PROJECT_DIR}src/${VUE_MAIN_BASE}";
+cp "${CORDOVA_CONFIG_ROOT}${VUE_MAIN}" "${PROJECT_DIR}src/${VUE_MAIN}";
 
-# Aditional resources
+# Aditional cordova configs
 cp -r ./res/icon/android/. "${ANDROID_RESOURCE_ROOT}";
 cp -r ./res/screen/android/. "${ANDROID_RESOURCE_ROOT}";
 printf "\n\n...Configured...\n\n"
@@ -118,8 +115,7 @@ printf "\n\n...Configured...\n\n"
 printf "\n\n...Building...\n\n";
 yarn --cwd "${PROJECT_DIR}" install;
 yarn --cwd "${PROJECT_DIR}" build --dest "${PROJECT_BUILD_PATH}";
-cd "/builder/src/node_modules/crust-project/public/"
-cp "config.example.js" "config.js";
+touch "./${CORDOVA_ROOT}config.js";
 printf "\n\n...Built...\n\n";
 
 # 4. Run/Deploy
