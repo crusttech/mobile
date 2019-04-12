@@ -127,7 +127,7 @@ case "$operation" in
   run|r)
     # TODO: Support for iOS
     echo "Running for: $platform";
-    cordova run  "$platform" ;;
+    cordova run  "$platform" --debug ;;
 
   *) echo "Invalid operation: $operation"; exit 1 ;;
 esac

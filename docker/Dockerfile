@@ -11,7 +11,7 @@ RUN \
 # This installs 30- Android SDK Build-tools, revision 21.1.2
 RUN ( while [ 1 ]; do sleep 10; echo y; done ) | android update sdk --no-ui --filter 30
 
-VOLUME /builder /p_in /c_in /c_out /root/.gradle /root/.cache/yarn
+VOLUME /builder /p_in /c_in /c_out /root/.gradle /root/.cache/yarn /root/.android
 RUN yarn config set cache-folder /root/.cache/yarn/v2
 WORKDIR /builder
 COPY ./run.sh run.sh

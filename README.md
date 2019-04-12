@@ -15,6 +15,11 @@ Build is done using a container.
   * Used by gradle's cache for faster builds. Optional, but recommended.
 * /root/.cache/yarn
   * Used by yarn's cache for faster builds. Optional, but recommended
+* /root/.android
+  * Used by android build process. Should be provided so android can use cache for faster builds. It's also important so we can persist key chain over multiple build runs.
+    * On build, app is signed using the before generated keys. Since container starts from scratch this key gets generated every time, and we get a key miss match when deploy is attempted.
+
+*Above cache directories don't need to be host machine's; you can create an empty directory eg. .android inside this project. gitignore can already filter these out.*
 
 ### Setup
 1. Build a container used for building cordova apps.
