@@ -20,7 +20,7 @@ VUE_CONFIG="vue.config.js";
 VUE_MAIN_BASE="base.main.js";
 VUE_MAIN="main.js";
 
-ANDROID_RESOURCE_ROOT="./platforms/android/res/";
+ANDROID_RESOURCE_ROOT="./platforms/android/app/src/main/res/";
 
 C_IN="/c_in";
 P_IN="/p_in";
@@ -31,7 +31,7 @@ source='';
 location='';
 operation='';
 platforms='android';
-versionAndroid='6.0';
+versionAndroid='8.0.0';
 versionIos='';
 
 printf "\n\n...Flags extracting...\n\n";
