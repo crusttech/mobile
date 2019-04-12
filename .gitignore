@@ -7,6 +7,12 @@
 /platforms
 /www
 /node_modules
+.gradle
+.out
+.android
 
 # Optional to ignore plugin Git clones
 #/plugins
+
+# Makefile depricated
+makefile
