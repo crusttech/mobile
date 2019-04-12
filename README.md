@@ -25,7 +25,9 @@ Build is done using a container.
     * location -- if source is remote, specify a git repo; if source is local this flag should be omitted.
   * `o`
     * operation -- build/run
-    * if run is used; you should specify where your device is mounted with an extra -v flag. Example: `docker run ... -v /dev/bus/usb:/dev/bus/usb ...`
+    * if run is used, you have to mount the device as well. You cen either use:
+      * `--device=` flag and specify the device
+      * `--privileged` with volume `-v /dev/bus/usb:/dev/bus/usb`; this will give access to all devices on your host machine.
   * `p`
     * platform -- android/ios
     * TODO: Allow both platforms. This will be provided as (order not important): `android ios`
@@ -36,6 +38,9 @@ Build is done using a container.
 
 * Example of build from local:
   * `docker run -it -v /abs/path/out:/c_out -v /abs/path/mobile-messaging.hybrid:/c_in -v /abs/path/webapp-messaging:/p_in -v /abs/path_home/.gradle:/root/.gradle -v /abs/path_home/.cache/yarn:/root/.cache/yarn builder-image -s local -o build -p android`
+
+* Example of deploy to device:
+  * `docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb -v /abs/path/out:/c_out -v /abs/path/mobile-messaging.hybrid:/c_in -v /abs/path/webapp-messaging:/p_in -v /abs/path_home/.gradle:/root/.gradle -v /abs/path_home/.cache/yarn:/root/.cache/yarn builder-image -s local -o run -p android`
 
 ## Makefile
 Depricated. Use docker image instead.
