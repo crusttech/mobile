@@ -3,7 +3,10 @@
 # Exit if any section fails
 set -e
 trap 'lc=$cc; cc=$BASH_COMMAND' DEBUG
-trap 'echo "command \"${lc}\" failed; exit code $?."' EXIT
+trap '
+if [ $? -gt 0 ]; then
+  echo "command \"${lc}\" failed; exit code $?.";
+fi' EXIT
 
 PROJECT_NAME="crust-project";
 BUILDER_PROJECT_ROOT="/builder/src";
@@ -132,5 +135,4 @@ case "$operation" in
   *) echo "Invalid operation: $operation"; exit 1 ;;
 esac
 printf "\n\n...Operation ran...\n\n";
-
 exit 0
