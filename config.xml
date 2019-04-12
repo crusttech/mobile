@@ -30,6 +30,14 @@
         <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi/splash.png" />
         <splash density="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi/splash.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi/splash.png" />
+
+        <resource-file src="res/values/colors.xml" target="/app/src/main/res/values/colors.xml" />
+        <icon background="@color/background" density="ldpi" foreground="res/icon/android/mipmap-ldpi/foreground.png" />
+        <icon background="@color/background" density="mdpi" foreground="res/icon/android/mipmap-mdpi/foreground.png" />
+        <icon background="@color/background" density="hdpi" foreground="res/icon/android/mipmap-hdpi/foreground.png" />
+        <icon background="@color/background" density="xhdpi" foreground="res/icon/android/mipmap-xhdpi/foreground.png" />
+        <icon background="@color/background" density="xxhdpi" foreground="res/icon/android/mipmap-xxhdpi/foreground.png" />
+        <icon background="@color/background" density="xxxhdpi" foreground="res/icon/android/mipmap-xxxhdpi/foreground.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -55,5 +63,4 @@
     <preference name="SplashScreenDelay" value="2550" />
     <preference name="FadeSplashScreenDuration" value="750" />
     <preference name="SplashMaintainAspectRatio" value="false" />
-    <engine name="android" spec="^7.1.4" />
 </widget>
