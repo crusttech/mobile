@@ -62,14 +62,18 @@ printf "\n\n...Source extracted...\n\n";
 
 # 3. Build process starts...
 cd "$BUILDER_PROJECT_ROOT";
-mkdir www;
+if ! [[ -d "www" ]]; then
+  mkdir www;
+fi
 
 ## Prepare cordova & crust app
 printf "\n\n...Platforms adding...\n\n"
 for platform in $platforms; do
   echo "Adding platform: $platform";
   if [[ $platform == 'android' ]]; then
-    cordova platform add "$platform@$versionAndroid";
+    if ! [[ -d "platforms/android" ]]; then
+      cordova platform add "$platform@$versionAndroid";
+    fi
   elif [[ $platform == 'ios' ]]; then
     cordova platform add "$platform@$versionIos";
   else
@@ -94,12 +98,12 @@ echo "<script src=cordova.js></script>" >> "${PROJECT_DIR}public/index.html";
 ## Clear out crust config file, since mobile client configures it self.
 # echo "" > "${PROJECT_DIR}public/${PROJECT_CRUST_CFG_FILE}";
 
-## env configs
-cp -r "${CORDOVA_CONFIG_ROOT}env/." "${PROJECT_DIR}";
-
 ## Vue configs
 mv "${PROJECT_DIR}${VUE_CONFIG}" "${PROJECT_DIR}${VUE_CONFIG_BASE}";
 cp "${CORDOVA_CONFIG_ROOT}${VUE_CONFIG}" "${PROJECT_DIR}${VUE_CONFIG}";
+
+## env configs
+cp -r "${CORDOVA_CONFIG_ROOT}env/." "${PROJECT_DIR}";
 
 ## Main
 # mv ${PROJECT_DIR}src/${VUE_MAIN} ${PROJECT_DIR}src/${VUE_MAIN_BASE};
@@ -114,7 +118,8 @@ printf "\n\n...Configured...\n\n"
 printf "\n\n...Building...\n\n";
 yarn --cwd "${PROJECT_DIR}" install;
 yarn --cwd "${PROJECT_DIR}" build --dest "${PROJECT_BUILD_PATH}";
-cp "${PROJECT_DIR}public/config.js" "./${CORDOVA_ROOT}";
+cd "/builder/src/node_modules/crust-project/public/"
+cp "config.example.js" "config.js";
 printf "\n\n...Built...\n\n";
 
 # 4. Run/Deploy
@@ -125,7 +130,7 @@ case "$operation" in
     # TODO: Support for iOS
     echo "Building for: $platforms";
     cordova build "$platforms" --debug;
-    cp platforms/android/build/outputs/apk/android-debug.apk "$C_OUT"/android-debug.apk ;;
+    cp /builder/src/platforms/android/app/build/outputs/apk/debug/app-debug.apk "$C_OUT"/app-debug.apk ;;
 
   run|r)
     # TODO: Support for iOS

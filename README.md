@@ -38,6 +38,7 @@ Build is done using a container.
     * TODO: Allow both platforms. This will be provided as (order not important): `android ios`
 
 ### Example
+If you use the example commands, replace the /abs/path/ and /abs/path_home/ with desired paths.
 * Example of build from remote repos:
   * `docker run -it -v /abs/path/out:/c_out -v /abs/path_home/.gradle:/root/.gradle -v /abs/path_home/.cache/yarn:/root/.cache/yarn  builder-image -s remote -l https://github.com/crusttech/mobile-messaging.hybrid.git -o build -p android`
 
