@@ -1,6 +1,13 @@
 # Crust mobile
 Repository contains code used to encapsulate other crust projects inside cordova, so they can run as hybrid mobile apps.
 
+___
+### Note:
+Replace any `/abs/path[_.+]/` volume placeholders with the actual absolute path; docker requires absolute paths, so it will differ from environment to environment.
+
+Example; replace `/abs/path/out` with `/home/tomaz/Documents/builds/cordova_messaging`
+___
+
 ## Build app
 Build is done using a container.
 
