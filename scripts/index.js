@@ -1,32 +1,14 @@
 // NOTE: Remove this with actual xhr call when cores issue gets resolved.
-const mockResponse = `window.CrustConfig = {
-  system: {
-    baseUrl: 'https://system.api.latest.crust.tech'
-  },
+const mockResponseLatest = `window.CrustConfig = {
+  CrustSystemAPI: 'https://system.api.latest.crust.tech',
+  CrustMessagingAPI: 'https://messaging.api.latest.crust.tech',
+  CrustCrmAPI: 'https://crm.api.latest.crust.tech',
+}`
 
-  messaging: {
-    baseUrl: 'https://messaging.api.latest.crust.tech'
-  },
-
-  crm: {
-    baseUrl: 'https://crm.api.latest.crust.tech'
-  },
-
-  webapp: {
-    auth: {
-      adtSignOutUrl: "https://satosa.didmos.latest.crust.tech/didmos/logout/",
-    },
-    apps: {
-      googlemaps: {
-        apiKey: 'AIzaSyCDyRzziFyvGAfQbo2Ofiysgl70RU1DZnE',
-      },
-    },
-    baseUrl: 'https://latest.crust.tech'
-  },
-
-  // BC:	
-  sam: { baseUrl: 'https://messaging.api.latest.crust.tech' },
-  spa: { baseUrl: 'https://latest.crust.tech' },
+const mockResponsePlayground = `window.CrustConfig = {
+  CrustSystemAPI: 'https://system.api.playground.crust.tech',
+  CrustMessagingAPI: 'https://messaging.api.playground.crust.tech',
+  CrustCrmAPI: 'https://crm.api.playground.crust.tech',
 }`
 
 // Config must apply to this structure.
@@ -44,7 +26,11 @@ async function getConfig (domain) {
 
     // Preprocess the config so we can use it as a json.
     try {
-      let preProc = mockResponse.replace(/^window.CrustConfig = /, 'return ')
+      let rsp = mockResponseLatest
+      if (domain.indexOf('playground') >= 0) {
+        rsp = mockResponsePlayground
+      }
+      let preProc = rsp.replace(/^window.CrustConfig = /, 'return ')
       if (!(cfgStructure.test(preProc.replace(/\n/g, '')))) {
         throw 'Config structure invalid!'
       }
