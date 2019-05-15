@@ -36,4 +36,7 @@ if (domain && config) {
 }
 
 // Run app
-require('./base.main.js')
+document.addEventListener('deviceready', () => {
+  console.debug('device.ready')
+  require('./base.main.js')
+}, false)
