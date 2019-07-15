@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="crustTheme" parent="android:style/Theme.Light.NoTitleBar">
+        <!-- @todo use splashscreen to avoid initial blank screen. Issue lies with splashscreen plugin, since
+        it uses a Dialog box. Find out how to make it fullscreen -->
+
+        <!-- @note this renderes over navigation - looks better but untill splashscreen issue is resolved, it looks wired -->
+        <!-- <item name="android:windowDrawsSystemBarBackgrounds">true</item> -->
+        <item name="android:windowBackground">@color/crustGrey</item>
+    </style>
+</resources>
