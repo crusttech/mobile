@@ -53,7 +53,7 @@ export default {
 
     afterLogout () {
       localStorage.removeItem(window.localStorageKeys.domain)
-      this.$router.push({ name: 'auth:login' })
+      this.$router.push({ name: 'configure' })
     },
 
     afterConfirmEmail () {
