@@ -1,9 +1,4 @@
-import app from 'corteza-webapp-messaging/src/app'
-import router from './router'
-import './themes'
-import './plugins'
-import './mixins'
-
+// handle initial configuration before running the app
 window.localStorageKeys = {
   domain: 'api.domain',
   domains: 'api.domains',
@@ -38,7 +33,11 @@ if (domain && config) {
 }
 
 // Run app
-document.addEventListener('deviceready', () => {
-  console.debug('device.ready')
-  app({ router })
-}, false)
+if (process.env.CORDOVA_PLATFORM) {
+  document.addEventListener('deviceready', () => {
+    console.debug('device.ready')
+    import('./app')
+  }, false)
+} else {
+  import('./app')
+}
