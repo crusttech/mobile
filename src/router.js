@@ -11,15 +11,15 @@ function view (name, resolve) {
 // Remove old auth routes
 const routes = messagingRoutes.filter(r => r.name !== 'auth')
 
-export default new Router({
+const router = new Router({
   base: '',
   mode: 'history',
   routes: [
     {
       path: '/auth',
-      name: 'auth',
       component: view('Auth'),
       children: [
+        // remove leading /
         ...authRoutes.map(r => ({ ...r, path: r.path.slice(1) })),
       ],
     },
@@ -31,3 +31,12 @@ export default new Router({
     ...routes,
   ],
 })
+router.beforeEach((to, from, next) => {
+  if (window.configInvalid && to.name !== 'configure') {
+    next({ name: 'configure' })
+  } else {
+    next()
+  }
+})
+
+export default router
