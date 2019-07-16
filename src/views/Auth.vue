@@ -1,12 +1,14 @@
 <template>
-  <the-wrap :loading="this.processing" :error="error">
-    <router-view v-bind="settings"
-                 :afterLogin="updateClients"
-                 :afterSignup="updateClients"
-                 :afterConfirmEmail="afterConfirmEmail"
-                 :afterLogout="afterLogout"
-                 :onExternalAuth="onExternalAuth" />
-  </the-wrap>
+  <div class="bootstrap-allowed">
+    <the-wrap :loading="this.processing" :error="error">
+      <router-view v-bind="settings"
+                  :afterLogin="updateClients"
+                  :afterSignup="updateClients"
+                  :afterConfirmEmail="afterConfirmEmail"
+                  :afterLogout="afterLogout"
+                  :onExternalAuth="onExternalAuth" />
+    </the-wrap>
+  </div>
 </template>
 
 <script>

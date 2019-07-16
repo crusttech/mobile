@@ -1,5 +1,10 @@
 @import "variables.scss";
 @import "~crust-webapp-messaging/src/themes/crust-base/index";
 @import "main.scss";
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+
+.bootstrap-allowed {
+  height: 100%;
+
+  @import 'node_modules/bootstrap/scss/bootstrap';
+  @import 'node_modules/bootstrap-vue/src/index.scss';
+}

@@ -1,48 +1,50 @@
 <template>
-  <the-wrap>
-    <b-card-body>
-      <b-card-title>{{ $t(`view.configureClient.title`) }}</b-card-title>
+  <div class="bootstrap-allowed">
+    <the-wrap>
+      <b-card-body>
+        <b-card-title>{{ $t(`view.configureClient.title`) }}</b-card-title>
 
-      <!-- pre-defined configurations -->
-      <b-card-sub-title>
-        {{ $t('view.configureClient.existingConfigs') }}
-      </b-card-sub-title>
-      <b-list-group v-if="hasDomains">
-        <b-list-group-item v-for="{ domain, config } of domains"
-                           :key="domain"
-                           @click="finishConfig({ domain, config })">
-          {{ domain }}
-        </b-list-group-item>
-      </b-list-group>
+        <!-- pre-defined configurations -->
+        <b-card-sub-title>
+          {{ $t('view.configureClient.existingConfigs') }}
+        </b-card-sub-title>
+        <b-list-group v-if="hasDomains">
+          <b-list-group-item v-for="{ domain, config } of domains"
+                            :key="domain"
+                            @click="finishConfig({ domain, config })">
+            {{ domain }}
+          </b-list-group-item>
+        </b-list-group>
 
-      <!-- new configuration -->
-      <b-card-sub-title class="mt-3">
-        {{ $t('view.configureClient.newConfig') }}
-      </b-card-sub-title>
-      <b-form @submit.prevent="attemptConfiguration">
-        <div class="text-danger mb-1" v-if="error">{{ $t('general.error-tpl', { error }) }}</div>
-        <b-input-group>
-          <b-input-group-prepend>
-            <span class="input-group-text bg-primary text-white">
-              <font-awesome-icon :icon="['fas', 'globe']"></font-awesome-icon>
-            </span>
-          </b-input-group-prepend>
-          <b-form-input v-model="domain"
-                type="text"
-                :placeholder="$t('view.configureClient.form.domain.placeholder')"
-                required />
-        </b-input-group>
+        <!-- new configuration -->
+        <b-card-sub-title class="mt-3">
+          {{ $t('view.configureClient.newConfig') }}
+        </b-card-sub-title>
+        <b-form @submit.prevent="attemptConfiguration">
+          <div class="text-danger mb-1" v-if="error">{{ $t('general.error-tpl', { error }) }}</div>
+          <b-input-group>
+            <b-input-group-prepend>
+              <span class="input-group-text bg-primary text-white">
+                <font-awesome-icon :icon="['fas', 'globe']"></font-awesome-icon>
+              </span>
+            </b-input-group-prepend>
+            <b-form-input v-model="domain"
+                  type="text"
+                  :placeholder="$t('view.configureClient.form.domain.placeholder')"
+                  required />
+          </b-input-group>
 
-        <b-form-group class="mt-3 text-right">
-          <b-button type="submit"
-                variant="primary"
-                :disabled="disabledSubmit">
-            {{ $t('view.configureClient.form.submit') }}
-          </b-button>
-        </b-form-group>
-      </b-form>
-    </b-card-body>
-  </the-wrap>
+          <b-form-group class="mt-3 text-right">
+            <b-button type="submit"
+                  variant="primary"
+                  :disabled="disabledSubmit">
+              {{ $t('view.configureClient.form.submit') }}
+            </b-button>
+          </b-form-group>
+        </b-form>
+      </b-card-body>
+    </the-wrap>
+  </div>
 </template>
 
 <script>
