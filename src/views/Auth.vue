@@ -16,6 +16,9 @@ import App from 'corteza-webapp-auth/src/views/App'
 import TheWrap from 'corteza-webapp-auth/src/components/TheWrap'
 
 export default {
+  i18nOptions: {
+    namespaces: [ 'auth' ],
+  },
 
   components: {
     TheWrap,
