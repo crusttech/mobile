@@ -18,12 +18,11 @@
     "cordova-prepare": "vue-cli-service cordova-prepare"
   },
   "dependencies": {
-    "corteza-webapp-auth": "cortezaproject/corteza-webapp-auth.git#master",
     "bootstrap-vue": "^2.0.0-rc.26",
-    "corteza-webapp-common": "cortezaproject/corteza-webapp-common.git#master",
+    "core-js": "^2.6.5",
+    "corteza-webapp-auth": "cortezaproject/corteza-webapp-auth.git#master",
     "corteza-webapp-messaging": "cortezaproject/corteza-webapp-messaging.git#master",
     "crust-webapp-messaging": "crusttech/crust-webapp-messaging.git#master",
-    "core-js": "^2.6.5",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
