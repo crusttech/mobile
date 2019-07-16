@@ -5,7 +5,10 @@ module.exports = buildVueConfig({
   appLabel: 'Crust Messaging',
   theme: 'crust-hybrid-base',
   packageAlias: 'crust-hybrid-messaging',
-  publicPath: '',
+  publicPath: process.env.CORDOVA_PLATFORM ? '' : '/',
+  alias: {
+    vue$: `corteza-webapp-messaging/node_modules/vue/dist/vue.esm.js`,
+  },
   pluginOptions: {
     cordovaPath: 'src-cordova',
   },
