@@ -13,7 +13,7 @@ const routes = messagingRoutes.filter(r => r.name !== 'auth')
 
 const router = new Router({
   base: '',
-  mode: 'history',
+  mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
   routes: [
     {
       path: '/auth',
