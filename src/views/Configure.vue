@@ -137,7 +137,7 @@ export default {
 
       // update configs
       Object.assign(window, config)
-      delete window.invalid
+      delete window.configInvalid
 
       // commit updated apis to the state
       this.$SystemAPI.baseURL = window.SystemAPI
