@@ -64,20 +64,8 @@ export default {
 
     updateClients () {
       // commit updated apis to the state
-      this.$store.commit('channels/updateAPI', {})
-      this.$store.commit('history/updateAPI', {})
-      this.$store.commit('users/updateAPI', {})
-      this.$store.commit('unread/updateAPI', {})
-      this.$store.commit('suggestions/updateAPI', {})
-
       this.$SystemAPI.setJWT(this.$auth.JWT)
       this.$MessagingAPI.setJWT(this.$auth.JWT)
-
-      this.$store.commit('channels/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('history/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('users/updateAPI', { MessagingAPI: this.$MessagingAPI, SystemAPI: this.$SystemAPI })
-      this.$store.commit('unread/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('suggestions/updateAPI', { MessagingAPI: this.$MessagingAPI })
 
       this.$router.push({ name: 'landing' })
     },

@@ -140,20 +140,8 @@ export default {
       delete window.invalid
 
       // commit updated apis to the state
-      this.$store.commit('channels/updateAPI', { MessagingAPI: undefined })
-      this.$store.commit('history/updateAPI', { MessagingAPI: undefined })
-      this.$store.commit('users/updateAPI', { MessagingAPI: undefined, SystemAPI: undefined })
-      this.$store.commit('unread/updateAPI', { MessagingAPI: undefined })
-      this.$store.commit('suggestions/updateAPI', { MessagingAPI: undefined })
-
       this.$SystemAPI.baseURL = window.SystemAPI
       this.$MessagingAPI.baseURL = window.MessagingAPI
-
-      this.$store.commit('channels/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('history/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('users/updateAPI', { MessagingAPI: this.$MessagingAPI, SystemAPI: this.$SystemAPI })
-      this.$store.commit('unread/updateAPI', { MessagingAPI: this.$MessagingAPI })
-      this.$store.commit('suggestions/updateAPI', { MessagingAPI: this.$MessagingAPI })
 
       this.$router.push({ name: 'auth:login' })
     },
