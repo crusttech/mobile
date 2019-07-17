@@ -1,7 +1,11 @@
 {
   "name": "mobile-messaging.hybrid",
-  "version": "0.1.0",
+  "version": "2019.3.9",
   "private": true,
+  "license": "Apache-2.0",
+  "contributors": [
+    "Tomaž Jerman <tomaz.jerman121@gmail.com>"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
