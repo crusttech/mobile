@@ -25,3 +25,4 @@ yarn-error.log*
 /src-cordova/plugins
 /public/cordova.js
 /src-cordova/www
+/src-cordova/build.json

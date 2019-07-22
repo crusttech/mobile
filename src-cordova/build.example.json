@@ -1,0 +1,10 @@
+{
+  "android": {
+    "release": {
+      "keystore": "/cred/android_upload.keystore",
+      "storePassword": "keystore.password",
+      "alias": "key.alias",
+      "password" : "key.password"
+    }
+  }
+}
