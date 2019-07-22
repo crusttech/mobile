@@ -2,6 +2,7 @@
   <div class="bootstrap-allowed">
     <the-wrap :loading="this.processing" :error="error">
       <router-view v-bind="settings"
+                  :externalEnabled="false"
                   :afterLogin="updateClients"
                   :afterSignup="updateClients"
                   :afterConfirmEmail="afterConfirmEmail"
@@ -16,10 +17,6 @@ import App from 'corteza-webapp-auth/src/views/App'
 import TheWrap from 'corteza-webapp-auth/src/components/TheWrap'
 
 export default {
-  i18nOptions: {
-    namespaces: [ 'auth' ],
-  },
-
   components: {
     TheWrap,
   },
