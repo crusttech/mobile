@@ -1,8 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGlobe, faAt, faKey } from '@fortawesome/free-solid-svg-icons'
+import fa from './fontawesome'
 
 library.add(
-  faGlobe,
-  faAt,
-  faKey,
+  fa,
 )
