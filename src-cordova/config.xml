@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="tech.crust.hybrid.messaging" version="2019.3.13" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="tech.crust.hybrid.messaging" version="2019.3.14" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Crust messaging</name>
     <description>
         Crust messaging mobile application.
@@ -35,5 +35,8 @@
     <preference name="FadeSplashScreen" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
     <preference name="OverrideUserAgent" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" />
+    <plugin name="cordova-plugin-camera" spec="^4.1.0">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+    </plugin>
     <engine name="android" spec="^8.0.0" />
 </widget>
