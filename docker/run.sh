@@ -100,6 +100,7 @@ printf " ... done\n";
 printf "* coppy app assets";
 cp -r "./res/icon/android/." "${ANDROID_RESOURCE_ROOT}";
 cp -r "./res/screen/android/." "${ANDROID_RESOURCE_ROOT}";
+cp -r "./res/values/android/." "${ANDROID_RESOURCE_ROOT}/values";
 printf " ... done\n";
 
 # run operation
