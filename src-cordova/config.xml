@@ -19,6 +19,9 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
+            <activity android:theme="@style/crustTheme" />
+        </edit-config>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -32,10 +35,5 @@
     <preference name="FadeSplashScreen" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="true" />
     <preference name="OverrideUserAgent" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" />
-    <platform name="android">
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
-            <activity android:theme="@style/crustTheme" />
-        </edit-config>
-    </platform>
     <engine name="android" spec="^8.0.0" />
 </widget>
