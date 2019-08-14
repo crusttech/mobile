@@ -4,7 +4,7 @@ import i18n from './i18n'
 import './themes'
 import './plugins'
 import './mixins'
-import './icons'
+import './components'
 
 app({ router })
 // Updates to existing instance must happen after
