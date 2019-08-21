@@ -18,7 +18,7 @@ CORTEZA_AUTH="/corteza-webapp-auth";
 CORTEZA_MESSAGING="/corteza-webapp-messaging";
 CRUST_MESSAGING="/crust-webapp-messaging";
 
-CORDOVA_SRC="./src-cordova";
+CORDOVA_SRC="$CORDOVA_IN/src-cordova";
 ANDROID_RESOURCE_ROOT="./platforms/android/app/src/main/res/";
 
 cd "$CORDOVA_IN";
@@ -113,12 +113,12 @@ case "$operation" in
     if [ "$release" = true ]; then
       printf " ... release";
       cordova build "$platforms" --release --buildConfig;
-      cp "./platforms/android/app/build/outputs/apk/release/*" "$C_OUT/";
+      cp -R "$CORDOVA_SRC/platforms/android/app/build/outputs/apk/release/." "$CORDOVA_OUT/";
 
     else
       printf " ... debug";
       cordova build "$platforms" --debug;
-      cp "./platforms/android/app/build/outputs/apk/debug/*" "$C_OUT/";
+      cp -R "$CORDOVA_SRC/platforms/android/app/build/outputs/apk/debug/." "$CORDOVA_OUT/";
 
     fi ;;
 
