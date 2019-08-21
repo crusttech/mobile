@@ -56,7 +56,7 @@ case "$source" in
 
   remote|r)
     printf " ... using remote project $location";
-    git clone "$location" "$CORDOVA_IN" ;;
+    git clone "$location" "$CORDOVA_IN/" ;;
 
   *) echo "Invalid source: $source"; exit 1 ;;
 esac

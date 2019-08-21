@@ -1,4 +1,4 @@
-import Router from 'corteza-webapp-messaging/node_modules/vue-router'
+import Router from 'vue-router'
 import messagingRoutes from 'corteza-webapp-messaging/src/views/routes'
 import authRoutes from 'corteza-webapp-auth/src/views/routes'
 
