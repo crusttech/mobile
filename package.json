@@ -15,7 +15,8 @@
     "cordova-build-only-www-android": "cross-env CORDOVA_PLATFORM=android vue-cli-service cordova-build-only-www-android",
     "cordova-serve-ios": "cross-env CORDOVA_PLATFORM=ios vue-cli-service cordova-serve-ios",
     "cordova-build-ios": "cross-env CORDOVA_PLATFORM=ios vue-cli-service cordova-build-ios",
-    "cordova-prepare": "vue-cli-service cordova-prepare"
+    "cordova-prepare": "vue-cli-service cordova-prepare",
+    "cdeps": "yarn upgrade corteza-webapp-auth corteza-webapp-messaging crust-webapp-messaging"
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.26",

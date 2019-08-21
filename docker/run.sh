@@ -64,7 +64,7 @@ printf " ... done\n";
 
 # update deps
 printf "* update deps";
-yarn;
+yarn; yarn cdeps;
 printf " ... done\n";
 
 # build project
