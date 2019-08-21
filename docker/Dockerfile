@@ -12,5 +12,7 @@ RUN ( while [ 1 ]; do sleep 10; echo y; done ) | android update sdk -a --no-ui -
 
 VOLUME /scripts /cordova-in /cordova-out /root/.gradle /root/.cache/yarn /root/.android /cred /corteza-webapp-auth /corteza-webapp-messaging /crust-webapp-messaging
 RUN yarn config set cache-folder /root/.cache/yarn/v2
+COPY './run.sh' '/scripts/run.sh'
 WORKDIR /scripts
+
 ENTRYPOINT ["./run.sh"]
