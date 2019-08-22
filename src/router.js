@@ -16,19 +16,25 @@ const router = new Router({
   mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
   routes: [
     {
-      path: '/auth',
-      component: view('Auth'),
+      path: '',
+      component: view('index'),
       children: [
-        // remove leading /
-        ...authRoutes.map(r => ({ ...r, path: r.path.slice(1) })),
+        {
+          path: '/auth',
+          component: view('Auth'),
+          children: [
+            // remove leading /
+            ...authRoutes.map(r => ({ ...r, path: r.path.slice(1) })),
+          ],
+        },
+        {
+          path: '/configure',
+          name: 'configure',
+          component: view('Configure'),
+        },
+        ...routes,
       ],
     },
-    {
-      path: '/configure',
-      name: 'configure',
-      component: view('Configure'),
-    },
-    ...routes,
   ],
 })
 router.beforeEach((to, from, next) => {

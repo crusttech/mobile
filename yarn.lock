@@ -2598,7 +2598,7 @@ corteza-webapp-common@cortezaproject/corteza-webapp-common.git#master:
 
 corteza-webapp-messaging@cortezaproject/corteza-webapp-messaging.git#master:
   version "2019.6.1"
-  resolved "https://codeload.github.com/cortezaproject/corteza-webapp-messaging/tar.gz/f4600707a9ea6916c5fbfaacc2b17b22468124a6"
+  resolved "https://codeload.github.com/cortezaproject/corteza-webapp-messaging/tar.gz/2d9a24d11a5930311bdf11f9b3efe719cacc642f"
   dependencies:
     "@fortawesome/fontawesome-svg-core" "1.2.21"
     "@fortawesome/free-regular-svg-icons" "5.10.1"
@@ -2627,7 +2627,7 @@ corteza-webapp-messaging@cortezaproject/corteza-webapp-messaging.git#master:
     quill "^1.3.6"
     quill-delta "^4.2.1"
     quill-mention "^2.0.5"
-    reconnecting-websocket "^3.2.2"
+    reconnecting-websocket "^4.1.10"
     resolve-url-loader "^3.1.0"
     vue "^2.5.17"
     vue-focus "^2.1.0"
@@ -7779,6 +7779,11 @@ reconnecting-websocket@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/reconnecting-websocket/-/reconnecting-websocket-3.2.2.tgz#8097514e926e9855e03c39e76efa2e3d1f371bee"
   integrity sha512-SWSfoXiaHVOqXuPWFgGWeUxKnb5HIY7I/Fh5C/hy4wUOgeOh7YIMXEiv5/eHBlNs4tNzCrO5YDR9AH62NWle0Q==
+
+reconnecting-websocket@^4.1.10:
+  version "4.1.10"
+  resolved "https://registry.yarnpkg.com/reconnecting-websocket/-/reconnecting-websocket-4.1.10.tgz#15485b5c5266ab6dd99187e23e8da207d24c4270"
+  integrity sha512-x6vgqa8q9KRuJyFkOvBKH1TfyTmN5OWQUf1MIsblfOSY29VE+iI9cKqmIuPvg9TO/hUBxdmUIVutDkcdbqFwZg==
 
 redent@^1.0.0:
   version "1.0.0"

@@ -8,6 +8,10 @@ export default {
   },
 
   notification: {
+    device: {
+      online: 'Back online',
+      offline: 'No network connection',
+    },
     domain: {
       missing: 'Domain not defined',
     },
