@@ -1,5 +1,5 @@
 <template>
-  <div class="bootstrap-allowed">
+  <div class="bootstrap-allowed h-100">
     <the-wrap :loading="this.processing" :error="error">
       <router-view v-bind="settings"
                   :externalEnabled="false"

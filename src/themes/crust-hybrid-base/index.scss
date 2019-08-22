@@ -3,7 +3,9 @@
 @import "main.scss";
 
 .bootstrap-allowed {
-  height: 100%;
+  .h-100 {
+    height: 100%
+  }
 
   @import 'node_modules/bootstrap/scss/bootstrap';
   @import 'node_modules/bootstrap-vue/src/index.scss';

@@ -1,5 +1,5 @@
 <template>
-  <div class="bootstrap-allowed">
+  <div class="bootstrap-allowed h-100">
     <the-wrap>
       <b-card-body>
         <b-card-title>{{ $t(`configuration.title`) }}</b-card-title>
